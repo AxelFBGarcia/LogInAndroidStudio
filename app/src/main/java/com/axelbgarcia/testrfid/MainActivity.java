@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements RFIDHandler.Respo
         if (pressed) {
             runOnUiThread(new Runnable() {
                 public void run() {
-                    MainActivity.this.textrfid.setText("hello");
+                    MainActivity.this.textrfid.setText(tag);
                 }
             });
             this.rfidHandler.performInventory();

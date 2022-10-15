@@ -32,7 +32,7 @@ import org.llrp.ltk.generated.custom.parameters.MotoFindItem;
 
 class RFIDHandler implements Readers.RFIDReaderEventHandler {
 
-    final static String TAG = "RFID_SAMPLE";
+    final static String TAG = "Florencia";
     // RFID Reader
     private static Readers readers;
     private static ArrayList<ReaderDevice> availableRFIDReaderList;

@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="florenciaBlue">#15C3D9</color>
     <color name="flDarkerBlue">#3295B7</color>
+    <color name="hintCol">#7E7E7E</color>
+
 </resources>

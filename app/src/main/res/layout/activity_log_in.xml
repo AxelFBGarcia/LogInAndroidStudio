@@ -49,48 +49,81 @@
 
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="60dp" />
+                    android:layout_height="50dp" />
 
-                <EditText
-                    android:id="@+id/email"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textfield"
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/edit_text_bg"
-                    android:hint="Email"
-                    android:paddingLeft="20dp"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
-                    android:textSize="14dp"
-                    app:layout_constraintWidth_percent=".8" />
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp" />
+                    android:gravity="center"
+                    app:endIconMode="clear_text"
+                    app:errorEnabled="true"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxCornerRadiusBottomEnd="20dp"
+                    app:boxCornerRadiusBottomStart="20dp"
+                    app:boxCornerRadiusTopEnd="20dp"
+                    app:boxCornerRadiusTopStart="20dp"
+                    >
 
-                <EditText
-                    android:id="@+id/pass"
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/usrName"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="@string/prompt_usrName"
+                        android:inputType="textEmailAddress"
+                        android:paddingLeft="20dp"
+                        android:textSize="@dimen/fontText"
+                        app:layout_constraintWidth_percent=".8" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textfield2"
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/edit_text_bg"
-                    android:hint="Contraseña"
-                    android:paddingLeft="20dp"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
-                    android:textSize="14dp"
-                    app:flow_firstVerticalBias="0"
-                    app:layout_constraintWidth_percent=".8" />
+                    android:gravity="center"
+                    app:endIconMode="password_toggle"
+                    app:errorEnabled="true"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxCornerRadiusBottomEnd="20dp"
+                    app:boxCornerRadiusBottomStart="20dp"
+                    app:boxCornerRadiusTopEnd="20dp"
+                    app:boxCornerRadiusTopStart="20dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/passw"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="@string/prompt_password"
+                        android:inputType="textPassword"
+                        android:paddingLeft="20dp"
+                        android:textSize="@dimen/fontText"
+                        app:boxStrokeErrorColor="@color/black"
+                        app:errorEnabled="true"
+                        app:flow_firstVerticalBias="0"
+                        app:layout_constraintWidth_percent=".8" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="80dp" />
+                    android:layout_height="50dp" />
 
                 <Button
+                    android:id="@+id/inlog"
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_bg"
                     android:text="Login"
                     android:textColor="@color/white"
-                    android:textSize="14dp"
+                    android:textSize="@dimen/fontText"
                     android:textStyle="bold"
                     app:layout_constraintWidth_percent=".8" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
 
             </LinearLayout>
         </ScrollView>
@@ -115,7 +148,7 @@
         android:layout_height="wrap_content"
         android:text="Bienvenid@"
         android:textColor="@color/white"
-        android:textSize="14sp"
+        android:textSize="@dimen/fontText"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
