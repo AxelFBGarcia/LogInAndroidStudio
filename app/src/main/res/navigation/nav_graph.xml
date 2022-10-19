@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.axelbgarcia.testrfid.MainActivity"
+        android:name="com.axelbgarcia.testrfid.RFIDActions"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/activity_main">
 

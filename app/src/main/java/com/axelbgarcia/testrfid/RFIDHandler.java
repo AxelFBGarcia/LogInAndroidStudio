@@ -26,12 +26,10 @@ import com.zebra.rfid.api3.STOP_TRIGGER_TYPE;
 import com.zebra.rfid.api3.TagData;
 import com.zebra.rfid.api3.TagDataArray;
 import com.zebra.rfid.api3.TriggerInfo;
+
 import java.util.ArrayList;
-import java.util.Iterator;
-import org.llrp.ltk.generated.custom.parameters.MotoFindItem;
 
 class RFIDHandler implements Readers.RFIDReaderEventHandler {
-
     final static String TAG = "Florencia";
     // RFID Reader
     private static Readers readers;
@@ -41,11 +39,11 @@ class RFIDHandler implements Readers.RFIDReaderEventHandler {
     private EventHandler eventHandler;
     // UI and context
     TextView textView;
-    private MainActivity context;
+    private RFIDActions context;
     // general
     private int MAX_POWER = 270;
 
-    void onCreate(MainActivity activity) {
+    void onCreate(RFIDActions activity) {
         // application context
         context = activity;
         // Status UI
@@ -139,12 +137,6 @@ class RFIDHandler implements Readers.RFIDReaderEventHandler {
                 }
             }
             return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void aVoid) {
-            super.onPostExecute(aVoid);
-            new ConnectionTask().execute();
         }
     }
 
@@ -330,13 +322,13 @@ class RFIDHandler implements Readers.RFIDReaderEventHandler {
     // Read/Status Notify handler
     // Implement the RfidEventsLister class to receive event notifications
     public class EventHandler implements RfidEventsListener {
-        int population = 0;
+
+
         // Read Event Notification
         public void eventReadNotify(RfidReadEvents e) {
             // Recommended to use new method getReadTagsEx for better performance in case of large tag population
             TagDataArray tD = reader.Actions.getReadTagsEx(100);
             TagData[] myTags = tD.getTags();
-            population = myTags.length;
             if (myTags != null) {
                 for (int index = 0; index < myTags.length; index++) {
                     Log.d(TAG, "Tag ID " + myTags[index].getTagID());
@@ -397,5 +389,4 @@ class RFIDHandler implements Readers.RFIDReaderEventHandler {
         void handleTriggerPress(boolean pressed);
         //void handleStatusEvents(Events.StatusEventData eventData);
     }
-
 }

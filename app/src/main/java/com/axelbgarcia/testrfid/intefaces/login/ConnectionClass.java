@@ -25,21 +25,23 @@ public class ConnectionClass {
         DBUserNameStr = dbUserName;
         DBPasswordStr = dbPassword;
         // Declaring Server ip, username, database name and password
-
-
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         java.sql.Connection connection = null;
         String ConnectionURL = null;
-        try
-        {
-            Class.forName("net.sourceforge.jtds.jdbc.Driver");
-            ConnectionURL = "jdbc:jtds:sqlserver://" + ip + ":" + port +";databasename="+ db + ";user=" + DBUserNameStr+ ";password=" + DBPasswordStr + ";";
-            connection = DriverManager.getConnection(ConnectionURL);
-        }
-        catch (Exception e)
-        {
-            Log.e("error here 3 : ", e.getMessage());
+        if (DBPasswordStr.isEmpty() && DBUserNameStr.isEmpty());
+        else if (DBUserNameStr.isEmpty() || DBPasswordStr.isEmpty());
+        else{
+            try
+            {
+                Class.forName("net.sourceforge.jtds.jdbc.Driver");
+                ConnectionURL = "jdbc:jtds:sqlserver://" + ip + ":" + port +";databasename="+ db + ";user=" + DBUserNameStr+ ";password=" + DBPasswordStr + ";";
+                connection = DriverManager.getConnection(ConnectionURL);
+            }
+            catch (Exception e)
+            {
+                Log.e("error here 3 : ", e.getMessage());
+            }
         }
         return connection;
     }

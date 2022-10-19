@@ -49,7 +49,7 @@
 
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="50dp" />
+                    android:layout_height="25dp" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textfield"
@@ -100,15 +100,26 @@
                         android:paddingLeft="20dp"
                         android:textSize="@dimen/fontText"
                         app:boxStrokeErrorColor="@color/black"
-                        app:errorEnabled="true"
                         app:flow_firstVerticalBias="0"
                         app:layout_constraintWidth_percent=".8" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/rememberMe"
+                    android:layout_width="250dp"
+                    android:layout_height="34dp"
+                    android:text="Recuérdame"
+                    android:textColor="@color/hintCol"
+                    android:textSize="10dp"
+                    app:useMaterialThemeColors="false">
+
+                </com.google.android.material.checkbox.MaterialCheckBox>
+
+
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="50dp" />
+                    android:layout_height="35dp" />
 
                 <Button
                     android:id="@+id/inlog"
@@ -123,7 +134,7 @@
 
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="10dp" />
+                    android:layout_height="20dp" />
 
             </LinearLayout>
         </ScrollView>
